@@ -441,8 +441,8 @@ public class UCropActivity extends AppCompatActivity {
             aspectRationSelectedByDefault = 2;
 
             aspectRatioList = new ArrayList<>();
-            aspectRatioList.add(new AspectRatio(null, 1, 1));
-            aspectRatioList.add(new AspectRatio(null, 3, 4));
+            // aspectRatioList.add(new AspectRatio(null, 1, 1));
+            // aspectRatioList.add(new AspectRatio(null, 3, 4));
             aspectRatioList.add(new AspectRatio(getString(R.string.ucrop_label_original).toUpperCase(),
                     CropImageView.SOURCE_IMAGE_ASPECT_RATIO, CropImageView.SOURCE_IMAGE_ASPECT_RATIO));
             aspectRatioList.add(new AspectRatio(null, 3, 2));
