@@ -438,7 +438,7 @@ public class UCropActivity extends AppCompatActivity {
         ArrayList<AspectRatio> aspectRatioList = intent.getParcelableArrayListExtra(UCrop.Options.EXTRA_ASPECT_RATIO_OPTIONS);
 
         if (aspectRatioList == null || aspectRatioList.isEmpty()) {
-            aspectRationSelectedByDefault = 0;
+            aspectRationSelectedByDefault = 2;
 
             aspectRatioList = new ArrayList<>();
             aspectRatioList.add(new AspectRatio(null, 1, 1));
@@ -473,12 +473,13 @@ public class UCropActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     mGestureCropImageView.setTargetAspectRatio(
                             ((AspectRatioTextView) ((ViewGroup) v).getChildAt(0)).getAspectRatio(v.isSelected()));
+                    mGestureCropImageView.zoomOutImage(mGestureCropImageView.getCurrentScale()
                     mGestureCropImageView.setImageToWrapCropBounds();
-                    // if (!v.isSelected()) {
-                    //     for (ViewGroup cropAspectRatioView : mCropAspectRatioViews) {
-                    //         cropAspectRatioView.setSelected(cropAspectRatioView == v);
-                    //     }
-                    // }
+                    if (!v.isSelected()) {
+                        for (ViewGroup cropAspectRatioView : mCropAspectRatioViews) {
+                            cropAspectRatioView.setSelected(cropAspectRatioView == v);
+                        }
+                    }
                 }
             });
         }
